@@ -62,13 +62,13 @@ export default function Home() {
     }
 
     if (typeof route[folder] === "object" && route[folder] !== null) {
-      return Object.keys(route[folder]).map((folder) => {
+      return Object.keys(route[folder]).map((nestedFolder) => {
         return (
           <Folder
-            key={folder}
-            folder={folder}
+            key={nestedFolder}
+            folder={nestedFolder}
             renderNestedPath={renderNestedPath}
-            route={route}
+            route={route[folder] as Path}
             openClose={openClose}
             setOpenClose={setOpenClose}
           />
