@@ -53,14 +53,9 @@ function Folder({
 
 export default function Home() {
   const [openClose, setOpenClose] = useState({});
-  // console.log("openClose", openClose);
 
   function renderNestedPath(route: Path, folder: string) {
-    console.log(route, folder);
-    
     if (Array.isArray(route[folder])) {
-      console.log("wcd", route[folder]);
-      
       return route[folder].map((file) => {
         return <h1 key={file}>{file}</h1>;
       });
